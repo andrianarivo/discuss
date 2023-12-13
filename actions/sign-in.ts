@@ -1,5 +1,5 @@
 import * as auth from '@/auth'
 
-export async function signIn() {
+export default async function signIn() {
   return auth.signIn('github')
 }

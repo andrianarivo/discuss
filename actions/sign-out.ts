@@ -1,5 +1,5 @@
 import * as auth from '@/auth'
 
-export async function signOut() {
+export default async function signOut() {
   return auth.signOut()
 }
