@@ -5,8 +5,12 @@ import FormButton from '@/components/common/form-button'
 import * as actions from '@/actions'
 import {useFormState} from 'react-dom'
 
-export default function PostCreateForm() {
-  const [formState, action] = useFormState(actions.createPost, {})
+interface PostCreateFormProps {
+  slug: string
+}
+
+export default function PostCreateForm({slug}: PostCreateFormProps) {
+  const [formState, action] = useFormState(actions.createPost.bind(null, slug), {})
   return <div>
     <Popover placement="left">
         <PopoverTrigger>
